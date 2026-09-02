@@ -87,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="fixed top-0 left-0 z-50 lg:top-4 lg:left-1/2 lg:-translate-x-1/2 bg-white/60 backdrop-blur-[32px] border-b lg:border border-white/60 lg:rounded-3xl px-4 sm:px-6 lg:px-4 py-3 lg:py-2.5 transition-all duration-300 lg:max-w-7xl lg:mx-auto shadow-[0_8px_32px_rgba(0,0,0,0.08)] w-full lg:w-[calc(100%-2rem)]">
+    <header className="fixed top-0 left-0 z-50 lg:top-4 lg:left-1/2 lg:-translate-x-1/2 bg-white/60 backdrop-blur-md border-b lg:border border-white/60 lg:rounded-3xl px-4 sm:px-6 lg:px-4 py-3 lg:py-2.5 transition-all duration-300 lg:max-w-7xl lg:mx-auto shadow-[0_8px_32px_rgba(0,0,0,0.08)] w-full lg:w-[calc(100%-2rem)]">
       <div className="flex items-center justify-between w-full">
         
         {/* Left Side: Brand Logo */}

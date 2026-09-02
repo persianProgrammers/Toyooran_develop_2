@@ -36,9 +36,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({
       
       {/* Dynamic Vibrant Mesh Gradient Background */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
-        <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-gradient-to-br from-blue-400/40 to-purple-500/30 blur-[120px] rounded-full mix-blend-multiply animate-pulse" style={{ animationDuration: '8s' }} />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-gradient-to-br from-amber-400/40 to-orange-500/30 blur-[120px] rounded-full mix-blend-multiply animate-pulse" style={{ animationDuration: '10s' }} />
-        <div className="absolute top-[30%] left-[30%] w-[40vw] h-[40vw] bg-gradient-to-br from-emerald-400/30 to-teal-500/30 blur-[120px] rounded-full mix-blend-multiply animate-pulse" style={{ animationDuration: '12s' }} />
+        <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[radial-gradient(circle_at_center,_rgba(96,165,250,0.15)_0%,_transparent_60%)] animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-[radial-gradient(circle_at_center,_rgba(251,191,36,0.15)_0%,_transparent_60%)] animate-pulse" style={{ animationDuration: '10s' }} />
+        <div className="absolute top-[30%] left-[30%] w-[40vw] h-[40vw] bg-[radial-gradient(circle_at_center,_rgba(52,211,153,0.12)_0%,_transparent_60%)] animate-pulse" style={{ animationDuration: '12s' }} />
       </div>
 
       <div className="w-full min-h-[100dvh] flex flex-col justify-center relative pt-24 pb-16 px-4 sm:px-6 lg:px-8 z-10">
@@ -178,8 +178,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({
         {/* Section 2: Massive Dark Cinematic Locations Card (from unified section) */}
         <div className="bg-slate-950 rounded-[2.5rem] p-6 lg:p-8 relative overflow-hidden flex flex-col shadow-2xl border border-slate-800">
           {/* Ambient Background Magic */}
-          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-amber-500/10 rounded-full blur-[100px] pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#003F86]/20 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,_rgba(245,158,11,0.1)_0%,_transparent_70%)] pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,_rgba(0,63,134,0.15)_0%,_transparent_70%)] pointer-events-none" />
           <div className="absolute inset-0 bg-[url('/images/cubes.png')] opacity-[0.02] mix-blend-overlay pointer-events-none" />
           
           <div className="relative z-10 mb-8">
@@ -250,8 +250,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                           ) : (
                              <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
                                 <div className="absolute inset-0 bg-[url('/images/cubes.png')] opacity-5" />
-                                <div className="w-64 h-64 bg-amber-500/10 rounded-full blur-[80px]" />
-                                <div className="w-[400px] h-[400px] absolute -bottom-32 -left-32 bg-blue-500/10 rounded-full blur-[100px]" />
+                                <div className="w-80 h-80 bg-[radial-gradient(circle_at_center,_rgba(245,158,11,0.1)_0%,_transparent_60%)]" />
+                                <div className="w-[600px] h-[600px] absolute -bottom-32 -left-32 bg-[radial-gradient(circle_at_center,_rgba(59,130,246,0.1)_0%,_transparent_60%)]" />
                                 <Map className="w-16 h-16 text-white/5 relative z-10" />
                              </div>
                           )}

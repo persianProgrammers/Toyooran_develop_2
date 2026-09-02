@@ -51,12 +51,12 @@ export const AboutContactUnifiedSection: React.FC = () => {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Massive Dark Cinematic Card */}
-        <div className="bg-slate-950 rounded-[2.5rem] sm:rounded-[3.5rem] p-6 sm:p-12 lg:p-16 relative overflow-hidden flex flex-col shadow-[0_30px_60px_rgba(0,0,0,0.1)]">
+        <div className="bg-[#001c3d] rounded-[2.5rem] sm:rounded-[3.5rem] p-6 sm:p-12 lg:p-16 relative overflow-hidden flex flex-col shadow-[0_30px_60px_rgba(0,0,0,0.1)]">
           
           {/* Ambient Background Magic */}
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#003F86]/20 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
-          <div className="absolute inset-0 bg-[url('/images/cubes.png')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,_rgba(245,158,11,0.08)_0%,_transparent_70%)] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,_rgba(0,63,134,0.15)_0%,_transparent_70%)] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
+          <div className="absolute inset-0 bg-[url('/images/cubes.png')] opacity-[0.03] pointer-events-none" />
 
           {/* TOP ROW: Manifesto & Core Contacts */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 relative z-10">
@@ -147,7 +147,7 @@ export const AboutContactUnifiedSection: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-auto lg:h-[500px]">
                 
                 {/* 1. Left Sidebar: Scrollable List of Branches */}
-                <div className="lg:col-span-4 bg-white/5 border border-white/10 rounded-[2rem] p-4 flex flex-col backdrop-blur-xl h-[350px] lg:h-full relative overflow-hidden shadow-2xl">
+                <div className="lg:col-span-4 bg-white/5 border border-white/10 rounded-[2rem] p-4 flex flex-col backdrop-blur-sm h-[350px] lg:h-full relative overflow-hidden shadow-2xl">
                    {/* Fade masks for elegant scrolling */}
                    <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-slate-950/80 to-transparent z-10 pointer-events-none rounded-t-[2rem]" />
                    <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-slate-950/90 to-transparent z-10 pointer-events-none rounded-b-[2rem]" />
@@ -187,7 +187,7 @@ export const AboutContactUnifiedSection: React.FC = () => {
                 </div>
 
                 {/* 2. Right Detail View: Active Card */}
-                <div className="lg:col-span-8 relative rounded-[2rem] overflow-hidden bg-slate-900/50 border border-white/10 h-[400px] lg:h-full group shadow-2xl">
+                <div className="lg:col-span-8 relative rounded-[2rem] overflow-hidden bg-[#002d61]/50 border border-white/10 h-[400px] lg:h-full group shadow-2xl">
                    <AnimatePresence mode="wait">
                       {activeLocation && (
                          <motion.div
@@ -199,18 +199,18 @@ export const AboutContactUnifiedSection: React.FC = () => {
                            className="absolute inset-0 flex flex-col w-full h-full"
                          >
                             {/* Map Background */}
-                            <div className="absolute inset-0 z-0 bg-slate-900">
+                            <div className="absolute inset-0 z-0 bg-[#002d61]">
                               {activeLocation.mapEmbedUrl ? (
                                  <iframe
                                    src={activeLocation.mapEmbedUrl}
-                                   className="w-full h-full grayscale opacity-40 mix-blend-screen group-hover:opacity-70 group-hover:grayscale-[20%] transition-all duration-700 object-cover"
+                                   className="w-full h-full grayscale opacity-30 group-hover:opacity-60 transition-all duration-700 object-cover"
                                    loading="lazy"
                                  />
                               ) : (
                                  <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
                                     <div className="absolute inset-0 bg-[url('/images/cubes.png')] opacity-5" />
-                                    <div className="w-64 h-64 bg-amber-500/10 rounded-full blur-[80px]" />
-                                    <div className="w-[400px] h-[400px] absolute -bottom-32 -left-32 bg-blue-500/10 rounded-full blur-[100px]" />
+                                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(245,158,11,0.08)_0%,_transparent_50%)]" />
+                                    
                                     <Map className="w-16 h-16 text-white/5 relative z-10" />
                                  </div>
                               )}

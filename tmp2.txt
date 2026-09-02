@@ -1,0 +1,15 @@
+const ServiceCard: React.FC<{ card: any, idx: number, onClick: () => void }> = ({ card, idx, onClick }) => {
+  const Icon = card.icon;
+  return (
+    <div
+      onClick={onClick}
+      className="relative group w-full h-[380px] sm:h-[420px] rounded-[2.5rem] overflow-hidden bg-slate-900 border border-slate-800 hover:border-transparent transition-colors duration-500 cursor-pointer shadow-2xl"
+    >
+      {/* 🌟 NEW HOVER EFFECT (Replaced the Flashlight/Conic Gradient) 🌟 */}
+      {/* Soft animated neon glow around the card instead of flashlight */}
+      <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 pointer-events-none blur-md" />
+      <div className="absolute -inset-[2px] rounded-[calc(2.5rem+2px)] bg-gradient-to-b from-transparent via-amber-500/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-700 -z-10" />
+
+      {/* Inner Card Surface */}
+      <div className="absolute inset-[2px] rounded-[calc(2.5rem-2px)] bg-gradient-to-b from-slate-900 to-[#020b18] z-10 overflow-hidden flex flex-col p-6 sm:p-8">
+        {/* Ambient Blobs inside the card */}

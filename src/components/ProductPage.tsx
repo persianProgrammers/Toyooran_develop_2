@@ -4,22 +4,14 @@ import { useData } from '../context/DataContext';
 import { ArrowRight, PhoneCall, Sparkles, Layers, Package, Zap, Settings } from 'lucide-react';
 import { LazyImage } from './LazyImage';
 import { NotFoundPage } from './NotFoundPage';
+import { SEO } from './SEO';
 
 export const ProductPage: React.FC = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
   const { products } = useData();
-  const product = products.find(p => p.id === productId || p.code === productId);
 
-  useEffect(() => {
-    if (product) {
-      document.title = `${product.name} | شرکت طیوران صنعت پویا`;
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) {
-        metaDesc.setAttribute('content', product.shortDescription || product.fullDescription);
-      }
-    }
-  }, [product]);
+  const product = products.find(p => p.id === productId || p.code === productId);
 
   if (!product) {
     return <NotFoundPage />;
@@ -27,6 +19,11 @@ export const ProductPage: React.FC = () => {
 
   return (
     <div className="pt-32 pb-24 bg-slate-50 min-h-screen">
+      <SEO 
+        title={`${product.name} | Toyooran`}
+        description={product.shortDescription || product.fullDescription}
+        ogType="product"
+      />
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Breadcrumb / Back button */}
         <button 

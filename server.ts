@@ -9,7 +9,7 @@ dotenv.config();
 
 // Helper to get SEO metadata based on route
 function getSeoMetadata(reqPath: string): { title: string; description: string; ogType: string } {
-  const baseTitle = "طیوران صنعت پویا";
+  const baseTitle = "Toyooran";
   
   if (reqPath === '/' || reqPath === '') {
     return {
@@ -132,7 +132,7 @@ function injectSeoTags(html: string, reqPath: string, baseUrl: string): string {
     <meta property="og:description" content="${metadata.description}" />
     <meta property="og:url" content="${canonicalUrl}" />
     <meta property="og:type" content="${metadata.ogType}" />
-    <meta property="og:site_name" content="طیوران صنعت پویا" />
+    <meta property="og:site_name" content="Toyooran" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${metadata.title}" />
     <meta name="twitter:description" content="${metadata.description}" />

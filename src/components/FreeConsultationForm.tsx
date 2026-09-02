@@ -43,8 +43,8 @@ export const FreeConsultationForm: React.FC<FreeConsultationFormProps> = ({
   return (
     <div className={`bg-white rounded-[2rem] p-6 sm:p-8 lg:p-10 flex flex-col relative overflow-hidden ${className}`}>
       {/* Decorative Blur Backgrounds */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50/50 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-50/50 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(circle_at_center,_rgba(239,246,255,0.5)_0%,_transparent_60%)] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[radial-gradient(circle_at_center,_rgba(255,251,235,0.5)_0%,_transparent_60%)] pointer-events-none" />
 
       {/* Header */}
       <div className="relative z-10 mb-8 text-center sm:text-right">

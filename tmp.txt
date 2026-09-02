@@ -1,0 +1,12 @@
+interface CircleCategoryCard {
+  id: ProductCategory;
+  title: string;
+  categoryEn: string;
+  icon: React.ElementType;
+  desc: string;
+  badge: string;
+  accentColor: string;
+  badgeBg: string;
+  badgeText: string;
+  specs: string[];
+}
