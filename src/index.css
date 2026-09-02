@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .clip-hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+  .clip-hexagon-horizontal {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html, body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+.glass-panel-dark {
+  background: rgba(0, 63, 134, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Wave Background */
+.bg-subtle-waves {
+  background-image: 
+    radial-gradient(ellipse at 80% 50%, rgba(0, 63, 134, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(255, 195, 3, 0.04) 0%, transparent 50%);
+}
+
+/* Blueprint Grid Background - Moving Grid Effect */
+.bg-blueprint {
+  background-color: #00224b;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  animation: moveGridDark 20s linear infinite;
+}
+
+.bg-blueprint-light {
+  background-color: #f8fafc;
+  background-image: 
+    linear-gradient(rgba(0, 63, 134, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 63, 134, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  animation: moveGridLight 20s linear infinite;
+}
+
+@keyframes moveGridDark {
+  0% { background-position: 0px 0px; }
+  100% { background-position: 32px 32px; }
+}
+
+@keyframes moveGridLight {
+  0% { background-position: 0px 0px; }
+  100% { background-position: 24px 24px; }
+}
+
