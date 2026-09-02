@@ -1,0 +1,8 @@
+{
+  "name": "Toyooran",
+  "description": "Comprehensive poultry machinery, feed mill equipment platform, and equipped Persian CMS administration panel for Toyooran Sanat Pouya.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

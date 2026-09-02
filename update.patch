@@ -1,0 +1,67 @@
+--- src/components/ProductCatalogSection.tsx
++++ src/components/ProductCatalogSection.tsx
+@@ -19,10 +19,12 @@
+ }
+ 
+ import { CategoryMarquee } from "./CategoryMarquee";
+ 
+ export const ProductCatalogSection: React.FC<ProductCatalogSectionProps> = ({ 
+   products, 
++  selectedCategory: propSelectedCategory,
++  onSelectCategory: propOnSelectCategory,
+   onSelectProduct,
+   onRequestQuoteForProduct
+ }) => {
+-  const [selectedCategory, setSelectedCategory] = useState<ProductCategory | 'all'>('all');
++  const [localCategory, setLocalCategory] = useState<ProductCategory | 'all'>('all');
++  const selectedCategory = propSelectedCategory !== undefined ? propSelectedCategory : localCategory;
++  
++  const handleSelectCategory = (cat: ProductCategory | 'all') => {
++    if (propOnSelectCategory) {
++      propOnSelectCategory(cat);
++    } else {
++      setLocalCategory(cat);
++    }
++  };
+ 
+   const [searchQuery, setSearchQuery] = useState('');
+   const [visibleCount, setVisibleCount] = useState(6);
+@@ -62,7 +72,7 @@
+       </div>
+ 
+-      <div className="w-full min-h-[100dvh] flex flex-col justify-center relative pt-24 pb-16 px-4 sm:px-6 lg:px-8 z-10">
++      <div className="w-full min-h-[100dvh] flex flex-col justify-center relative pt-24 pb-16 px-4 sm:px-6 lg:px-8 z-10">
+         <div className="max-w-4xl mx-auto w-full relative z-10 text-center">
+@@ -87,14 +97,14 @@
+       </div>
+ 
+-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-16 pb-16 lg:pb-24 relative z-10">
++      <div id="catalog-content" className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-16 pb-16 lg:pb-24 relative z-10">
+         {/* 
+           ========================================================
+           FILTERS & SEARCH
+           ========================================================
+         */}
+         <div className="mb-16 relative z-20">
+           {/* Infinite Draggable Category Marquee */}
+           <CategoryMarquee 
+             selectedCategory={selectedCategory} 
+-            onSelectCategory={setSelectedCategory} 
++            onSelectCategory={handleSelectCategory} 
+           />
+@@ -124,7 +134,7 @@
+           PRODUCT GRID (DRIBBBLE STYLE / MINIMALIST)
+           ========================================================
+         */}
+-        <motion.div  className="min-h-[600px]">
++        <motion.div className="min-h-[1000px]">
+             {filteredProducts.length === 0 ? (
+               <motion.div 
+@@ -138,7 +148,7 @@
+                 <h3 className="text-2xl font-black text-slate-800 mb-3">محصولی یافت نشد</h3>
+                 <p className="text-slate-500 mb-8 max-w-md">هیچ محصولی با این فیلترها وجود ندارد. لطفاً کلمات کلیدی یا دسته‌بندی را تغییر دهید.</p>
+                 <button 
+-                  onClick={() => { setSelectedCategory('all'); setSearchQuery('');  }}
++                  onClick={() => { handleSelectCategory('all'); setSearchQuery('');  }}
+                   className="px-8 py-3 rounded-full bg-[#003F86] text-white font-bold hover:bg-blue-800 transition-colors shadow-lg shadow-blue-900/20"
+                 >
